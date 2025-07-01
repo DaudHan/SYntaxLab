@@ -1,0 +1,68 @@
+/* Import direktif dasar dari Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gaya Kustom untuk EduSphere */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050807; /* Near black for high contrast */
+    color: #d1d5db; /* Lighter gray for text */
+}
+
+/* Latar belakang gradien halus */
+.main-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at top left, rgba(16, 185, 129, 0.1), transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Gaya untuk scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0c1010;
+}
+::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+}
+
+/* Gaya untuk kartu premium */
+.premium-card {
+    background-color: rgba(17, 24, 39, 0.5);
+    border: 1px solid transparent;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.premium-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.75rem; /* Menyesuaikan dengan rounded-xl */
+    border: 1px solid transparent;
+    background: linear-gradient(120deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.05)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.premium-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(16, 185, 129, 0.3);
+}
