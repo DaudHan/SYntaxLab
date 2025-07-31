@@ -82,6 +82,12 @@
             @endif
             <span>Papan Peringkat</span>
         </a>
+        <a href="{{ route('donasi.index') }}" class="{{ request()->routeIs('donasi.index') ? 'bg-green-500/10 text-white font-semibold' : 'text-gray-400 font-medium' }} flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-700/30 transition-colors relative">
+            @if(request()->routeIs('donasi.index'))
+                <div class="absolute inset-y-2 left-0 w-1 bg-green-500 rounded-r-full"></div>
+            @endif
+            <span>Donasi</span>
+        </a>
     @endif
 </nav>
 

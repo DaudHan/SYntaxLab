@@ -16,36 +16,32 @@ class CourseController extends Controller
      * Menampilkan halaman daftar kursus.
      */
     public function index(Request $request): View
-    {
-        // 1. Mulai query dasar
-        $query = Course::query();
+{
+    $query = Course::query();
 
-        // 2. Terapkan filter pencarian jika ada
-        if ($request->filled('search')) {
-            $query->where('title', 'like', '%' . $request->search . '%');
-        }
-
-        // 3. Terapkan filter kategori jika ada
-        if ($request->filled('category')) {
-            $query->where('category', $request->category);
-        }
-        
-        // 4. Terapkan filter status jika ada
-        if ($request->filled('status')) {
-            $query->where('status', $request->status);
-        }
-
-        // 5. Ambil semua kategori unik untuk dropdown filter
-        $categories = Course::select('category')->distinct()->pluck('category');
-
-        // 6. Eksekusi query dan kirim data ke view
-        $courses = $query->withCount('users')->latest()->paginate(10);
-
-        return view('admin.courses.index', [
-            'courses' => $courses,
-            'categories' => $categories, // Kirim data kategori ke view
-        ]);
+    if ($request->filled('search')) {
+        $query->where('title', 'like', '%' . $request->search . '%');
     }
+
+    if ($request->filled('category')) {
+        $query->where('category', $request->category);
+    }
+
+    if ($request->filled('status')) {
+        $query->where('status', $request->status);
+    }
+
+    // Ambil kategori untuk filter
+    $categories = Course::select('category')->distinct()->pluck('category');
+
+    // Ambil data dengan jumlah siswa (relasi users_count)
+    $courses = $query->withCount('users')->latest()->paginate(10);
+
+    return view('admin.courses.index', [
+        'courses' => $courses,
+        'categories' => $categories,
+    ]);
+}
 
     /**
      * Menampilkan formulir untuk membuat kursus baru.

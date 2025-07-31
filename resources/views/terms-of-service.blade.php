@@ -41,7 +41,7 @@
                     <h1>Ketentuan Layanan</h1>
                     <p class="text-sm text-gray-500">Terakhir diperbarui: 30 Juni 2025</p>
                     
-                    <p>Selamat datang di SyntaxLab. Ketentuan Layanan ini mengatur penggunaan Anda atas situs web kami yang berlokasi di edusphere.com dan layanan apa pun yang terkait.</p>
+                    <p>Selamat datang di SyntaxLab. Ketentuan Layanan ini mengatur penggunaan Anda atas situs web kami yang berlokasi di SyntaxLab.com dan layanan apa pun yang terkait.</p>
 
                     <h2>1. Akun Pengguna</h2>
                     <p>Saat Anda membuat akun dengan kami, Anda harus memberikan informasi yang akurat, lengkap, dan terkini setiap saat. Kegagalan untuk melakukannya merupakan pelanggaran terhadap Ketentuan, yang dapat mengakibatkan penghentian segera akun Anda di layanan kami. Anda bertanggung jawab untuk menjaga kerahasiaan kata sandi Anda.</p>

@@ -199,7 +199,7 @@
     <!-- Footer -->
     <footer class="border-t border-gray-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-         <p class="text-sm text-gray-500">&copy; 2025 EduSphere. Semua Hak Cipta Dilindungi.</p>
+         <p class="text-sm text-gray-500">&copy; 2025 SyntaxLab. Semua Hak Cipta Dilindungi.</p>
          <div class="flex gap-6">
             {{-- PERUBAHAN DI SINI --}}
             <a href="{{ route('privacy.policy') }}" class="text-gray-500 hover:text-white transition-colors">Privasi</a>

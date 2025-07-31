@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProjectSubmissionController;
 use App\Http\Controllers\Admin\QuizQuestionController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/leaderboard', [\App\Http\Controllers\LeaderboardController::class, 'index'])
     ->name('leaderboard.index');
     Route::post('/lessons/{lesson}/projects/submit', [\App\Http\Controllers\ProjectController   ::class, 'submit'])->name('projects.submit');
+    Route::get('/donasi', [DonationController::class, 'index'])->name('donasi.index');
 });
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {

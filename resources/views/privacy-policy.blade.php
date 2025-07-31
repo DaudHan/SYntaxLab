@@ -18,7 +18,7 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
             <a href="{{ url('/') }}" class="flex items-center gap-2">
                 <svg class="w-7 h-7 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-                <h1 class="text-xl font-bold text-white">EduSphere</h1>
+                <h1 class="text-xl font-bold text-white">SyntaxLab</h1>
             </a>
             <div class="flex items-center gap-4">
                 @auth
@@ -72,10 +72,10 @@
     <!-- Footer -->
     <footer class="border-t border-gray-800/60 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-             <p class="text-sm text-gray-500">&copy; 2025 EduSphere. Semua Hak Cipta Dilindungi.</p>
+             <p class="text-sm text-gray-500">&copy; 2025 SyntaxLab. Semua Hak Cipta Dilindungi.</p>
              <div class="flex gap-6">
                 <a href="{{ route('privacy.policy') }}" class="text-gray-400 hover:text-white">Privasi</a>
-                <a href="#" class="text-gray-400 hover:text-white">Ketentuan</a>
+                <a href="{{ route('terms.of.service')}}" class="text-gray-400 hover:text-white">Ketentuan</a>
              </div>
         </div>
     </footer>

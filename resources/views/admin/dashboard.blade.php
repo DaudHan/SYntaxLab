@@ -23,19 +23,43 @@
                 </div>
                 <div class="premium-card p-5 rounded-xl">
                     <p class="text-sm text-gray-400">Pendaftaran Baru (30 hari)</p>
-                    <p class="text-2xl font-bold text-white mt-1">150</p> {{-- Data statis untuk saat ini --}}
+                   <p class="text-2xl font-bold text-white mt-1">{{ $newUsersLast30Days }}</p>
+
                 </div>
                 <div class="premium-card p-5 rounded-xl">
                     <p class="text-sm text-gray-400">Tingkat Keterlibatan</p>
-                    <p class="text-2xl font-bold text-white mt-1">85%</p> {{-- Data statis untuk saat ini --}}
+                    <p class="text-2xl font-bold text-white mt-1">{{ $engagementRate }}%</p>
+
                 </div>
             </div>
 
             <div class="mt-10">
                 <h3 class="text-xl font-bold text-white mb-4">Aktivitas Terbaru</h3>
-                <div class="premium-card p-6 rounded-xl">
-                    <p class="text-gray-400">Tabel aktivitas pengguna atau kursus terbaru akan ditampilkan di sini.</p>
-                </div>
+                <div class="premium-card p-6 rounded-xl overflow-x-auto">
+    <table class="w-full text-sm text-left">
+        <thead class="bg-gray-800/50">
+            <tr>
+                <th class="p-4 font-semibold">Nama</th>
+                <th class="p-4 font-semibold">Email</th>
+                <th class="p-4 font-semibold">Terakhir Aktif</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($recentActiveUsers as $user)
+                <tr class="border-b border-gray-800/60 hover:bg-gray-800/40">
+                    <td class="p-4 font-medium text-white">{{ $user->name }}</td>
+                    <td class="p-4 text-gray-400">{{ $user->email }}</td>
+                    <td class="p-4 text-gray-400">{{ $user->updated_at->diffForHumans() }}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="3" class="text-center p-8 text-gray-400">Tidak ada aktivitas pengguna terbaru.</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+</div>
+
             </div>
 
         </div>

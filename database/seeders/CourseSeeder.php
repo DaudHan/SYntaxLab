@@ -88,7 +88,7 @@ class CourseSeeder extends Seeder
                     }
                 }
             }
-            $user = User::where('email', 'user@edusphere.com')->first();
+            $user = User::where('email', 'user@syntaxlab.com')->first();
             if ($user) {
                 $user->courses()->attach($course->id);
             }
